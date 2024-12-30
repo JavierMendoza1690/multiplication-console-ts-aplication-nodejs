@@ -1,5 +1,5 @@
 import { CreateTable } from "../domain/use-cases/create-table.use-cases";
-import { SaveFile } from "./save-file-use-cases";
+import { SaveFile } from "../domain/use-cases/save-file-use-cases";
 
 interface RunOptions {
   baseMultiplication: number;
@@ -35,7 +35,7 @@ export class ServerApp {
 
     (wasCreated)
     ? console.log('File created')
-    :console.log('File not created');
+    :console.error('File not created');
     
   }
 }

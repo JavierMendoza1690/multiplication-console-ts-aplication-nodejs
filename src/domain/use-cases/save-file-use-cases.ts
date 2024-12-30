@@ -18,11 +18,12 @@ export class SaveFile implements SaveFileUseCase{
     execute({fileContent, fileDestination= 'outputs', fileName='table'}:Options):boolean{
     
         try {
+            
             fs.mkdirSync(fileDestination, { recursive: true }); //crea la carpeta si no existe
-            fs.writeFileSync(`${fileDestination}/ ${fileName}.txt`, fileContent, 'utf-8');
+            fs.writeFileSync(`${fileDestination}/${fileName}.txt`, fileContent, 'utf-8');
             return true;           
         } catch (error) {
-            console.log(error);
+            // console.log(error); //winston
             return false;
         }
     }

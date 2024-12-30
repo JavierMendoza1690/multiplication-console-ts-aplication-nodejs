@@ -22,8 +22,9 @@ export class CreateTable implements CreateTableUseCase {
     // * Generando output message
     for (let i = 1; i <= limitMultiplication; i++) {
       outputMessage += `${baseMultiplication} x ${i} = ${
-        baseMultiplication * i
-      }\n`;
+        baseMultiplication * i}`;
+
+        if( i<limitMultiplication) outputMessage+='\n'
     }
 
     return outputMessage;
